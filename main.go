@@ -27,8 +27,11 @@ func main() {
 	// 	log.Fatal("create table user err:", err)
 	// }
 	r := gin.Default()
-	r.GET("/home", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{"message": "Trang chủ"})
+	r.GET("/", func(ctx *gin.Context) {
+		ctx.JSON(200, gin.H{"message": "GET METHOD"})
+	})
+	r.POST("/", func(ctx *gin.Context) {
+		ctx.JSON(200, gin.H{"message": "POST METHOD"})
 	})
 	// r.POST("/user", func(ctx *gin.Context) {
 	// 	_, err := d.Insert(&User{
